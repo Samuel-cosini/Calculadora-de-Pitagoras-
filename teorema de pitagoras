@@ -1,0 +1,52 @@
+import math 
+print('====CALCULADORA DE PITAGORAS====')
+hip=None
+Cat_op=None
+Cat_adj=None
+while True:
+    pergunta=input('o que você deseja descobrir em um triangulo retangulo?:')
+    if pergunta == 'hipotenusa':
+        Cat_op=float(input('digite o valor do cateto oposto:'))
+        Cat_adj=float(input('digite o valor do cateto adjacente:'))
+        x=Cat_adj**2
+        y=Cat_op**2
+        z=x+y
+        hip=math.sqrt(z)
+        print(f'hipotenuza é igual a {hip}')
+        a=input('quer continuar?(s/n):')
+        if a != 's':
+           break
+    elif pergunta == 'cateto oposto':
+        hip=float(input('digite o valor da hipotenusa:'))
+        Cat_adj=float(input('digite o valor do cateto adjacente:'))
+        if Cat_adj  > hip:
+            print('erro, o cateto nao pode ser maior que a hipotenusa')
+        else:
+            x=hip**2
+            y=Cat_adj**2
+            z=x-y
+            Cat_op=math.sqrt(z)
+            print(f'Cateto oposto é igual a {Cat_op}')
+            a=input('quer continuar?(s/n):')
+            if a != 's':
+                break
+    elif pergunta == 'cateto adjacente':
+        hip=float(input('digite o valor da hipotenusa:'))
+        Cat_op=float(input('digite o valor do cateto oposto:'))
+        if Cat_op  > hip:
+         print('erro, os catetos nao podem ser maior que a hipotenusa')
+        else:
+            x=hip**2
+            y=Cat_op**2
+            z=x-y
+            Cat_adj=math.sqrt(z)
+            print(f'Cateto oposto é igual a {Cat_adj}')
+            a=input('quer continuar?(s/n):')
+            if a != 's':
+                break
+    else:
+        print('ERRO, tente escrever de outra maneira!')
+    
+
+      
+    
